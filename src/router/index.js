@@ -5,6 +5,7 @@ const routes = [
   {
     path:'',
     redirect: '/rootText'
+    
   },
   {
     path: '/',
