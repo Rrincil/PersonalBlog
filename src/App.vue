@@ -1,4 +1,5 @@
 <template>
+  <div :style="{width:fullHeight+'px'}">
   <!-- <img src="./assets/logo.png"> -->
    <!-- <home></home> -->
      <el-container>
@@ -8,8 +9,9 @@
     </el-header>
 
     </el-container>
- <!-- <router-link to="/home" tag="firstly"></router-link> -->
- <router-view ></router-view>
+    <router-link to="/home" tag="firstly"></router-link>
+    <router-view ></router-view>    
+  </div>
 </template>
 
 <script>
@@ -28,14 +30,22 @@ export default {
   },
   data() {
     return {
-
+      fullHeight: null,
 
     }
   },
   methods: {
-
+    get_bodyHeight () {//动态获取浏览器高度
+      this.fullHeight = window.outerWidth
+      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        this.fullHeight = 1080
+      console.log(this.fullHeight);
+      }
+    },
   },
-
+  mounted(){
+    this.get_bodyHeight()
+  }
 }
 </script>
 

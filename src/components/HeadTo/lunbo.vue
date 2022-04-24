@@ -77,7 +77,7 @@
   .el-carousel{
     position: relative;
     padding-top: 20px;
-    background-image: url('../../assets/img/1.jpg');
+    /* background-image: url('../../assets/img/1.jpg'); */
     background-size:cover; 
     background-position: center center;
   }
